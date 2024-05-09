@@ -29,13 +29,24 @@ const userSchema = new Schema({
     },
 })
 
-const updateSchema = new Schema({
-    firstName : String,
-    lastName : String,
-})
-
 const User = mongoose.model('User',userSchema);
 
+const accountsSchema = new Schema({
+    userId : {
+        type : mongoose.Types.ObjectId,
+        ref : User,
+        required : true
+    },
+    balance : {
+        type : Number,
+        required : true 
+    }
+})
+
+
+const Accounts = mongoose.model('Accounts',accountsSchema);
+
 module.exports = {
-    User
+    User,
+    Accounts,
 }
