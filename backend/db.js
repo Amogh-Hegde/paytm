@@ -1,7 +1,13 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
 const {Schema} = mongoose;
 
-mongoose.connect('mongodb+srv://admin:practice%20@cluster0.7xrssdb.mongodb.net/paytm');
+const dbURL = process.env.MONGO_URL;
+
+mongoose.connect(dbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const userSchema = new Schema({
     firstName : {
