@@ -3,6 +3,6 @@
 
 ## It can do the following:
 
--anyone can signup and signin
--look at all users in the app
--transfer money to another user
+- anyone can signup and signin
+- look at all users in the app
+- transfer money to another user
